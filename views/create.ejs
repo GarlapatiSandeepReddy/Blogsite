@@ -1,0 +1,11 @@
+<%- include("partials/header.ejs") %>
+<% if(locals.flag){ %>
+      <h1>Blog created successfully.</h1>
+<% } %>
+<form action="/create" method="POST">
+    <label for="title">Title</label>
+    <input type="text" name="title" required>
+    <label for="post">Post</label>
+    <textarea name="post" id="post" cols="30" rows="10" required></textarea >
+    <input type="submit" name="submit">
+</form>

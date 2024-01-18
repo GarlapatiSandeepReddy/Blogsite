@@ -1,0 +1,17 @@
+<!-- include header here... -->
+<%- include("partials/header.ejs") %>
+<h1>View your blogs here!!!</h1>
+<% if(locals.blogs){ %>
+    <ul>
+        <% for(let i = 0; i < blogs.length; i++) {%>
+            <form action="/view" method="POST">
+                <input type="hidden" name="blogPage" value=<%= i %>>
+                <input type="submit" value=<%= blogs[i].title %>>
+            </form>
+        <%} %>
+    </ul> 
+<% }else{ %>
+    <h2>No blogs created yet.</h2>
+<% } %>
+</body>
+</html>
